@@ -1,0 +1,21 @@
+type Article {
+  comments: [Comment!]!
+  id: ID!
+  title: String!
+  url: String!
+}
+
+type Comment {
+  id: ID!
+  text: String!
+}
+
+type Mutation {
+  addComment(articleID: String!, text: String!): Comment!
+  createArticle(title: String!, url: String!): Article!
+}
+
+type Query {
+  article(articleID: String!): Article!
+  articles: [Article!]!
+}
