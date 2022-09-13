@@ -11,22 +11,22 @@ export async function create(title: string, url: string) {
   return result;
 }
 
-export async function get(articleID: string) {
-  return (await SQL.DB.selectFrom("article")
+export function get(articleID: string) {
+  return SQL.DB.selectFrom("article")
     .selectAll()
     .where("articleID", "=", articleID)
-    .executeTakeFirst()) as SQL.Row["article"];
+    .executeTakeFirst();
 }
 
-export async function list() {
-  return await SQL.DB.selectFrom("article")
+export function list() {
+  return SQL.DB.selectFrom("article")
     .selectAll()
     .orderBy("created", "desc")
     .execute();
 }
 
-export async function addComment(articleID: string, text: string) {
-  return await SQL.DB.insertInto("comment")
+export function addComment(articleID: string, text: string) {
+  return SQL.DB.insertInto("comment")
     .values({
       commentID: ulid(),
       articleID,
@@ -36,8 +36,8 @@ export async function addComment(articleID: string, text: string) {
     .executeTakeFirstOrThrow();
 }
 
-export async function comments(articleID: string) {
-  return await SQL.DB.selectFrom("comment")
+export function comments(articleID: string) {
+  return SQL.DB.selectFrom("comment")
     .selectAll()
     .where("articleID", "=", articleID)
     .execute();
