@@ -1,4 +1,4 @@
-import { App } from "@serverless-stack/resources";
+import { App } from "sst/constructs";
 import { Api } from "./Api";
 import { Web } from "./Web";
 import { Database } from "./Database";
@@ -6,10 +6,12 @@ import { Database } from "./Database";
 export default function main(app: App) {
   app.setDefaultFunctionProps({
     runtime: "nodejs16.x",
-    srcPath: "services",
-    bundle: {
+    nodejs: {
       format: "esm",
     },
   });
-  app.stack(Database).stack(Api).stack(Web);
+  app
+    .stack(Database)
+    .stack(Api)
+    .stack(Web);
 }
