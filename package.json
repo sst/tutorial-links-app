@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "sst dev --fullscreen=false",
+    "dev": "sst dev",
     "build": "sst build",
     "deploy": "sst deploy",
     "remove": "sst remove",
@@ -29,6 +29,6 @@
     "graphql": "16.5.0"
   },
   "dependencies": {
-    "sst": "2.0.0-rc.8"
+    "sst": "2.0.0-rc.17"
   }
 }

@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "dev": "sst env -- vite",
+    "dev": "sst env vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
