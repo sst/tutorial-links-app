@@ -1,21 +1,21 @@
-import { ColumnType,  RawBuilder } from 'kysely';
+import type { ColumnType } from "kysely";
 
 export type Generated<T> = T extends ColumnType<infer S, infer I, infer U>
   ? ColumnType<S, I | undefined, U>
   : ColumnType<T, T | undefined, T>;
 
-export type Timestamp = ColumnType<Date | RawBuilder, Date | string | RawBuilder, Date | string | RawBuilder>;
+export type Timestamp = ColumnType<Date, Date | string, Date | string>;
 
 export interface Article {
   articleID: string;
-  created: Generated<Timestamp | null>;
   title: string;
   url: string;
+  created: Generated<Timestamp | null>;
 }
 
 export interface Comment {
-  articleID: string;
   commentID: string;
+  articleID: string;
   text: string;
 }
 

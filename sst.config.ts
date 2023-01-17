@@ -11,6 +11,11 @@ export default {
     }
   },
   stacks(app) {
+    //TODO: Remove after Node16 is made default
+    app.setDefaultFunctionProps({
+      runtime: "nodejs16.x",
+    });
+
     app
       .stack(Database)
       .stack(Api)

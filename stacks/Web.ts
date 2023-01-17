@@ -1,14 +1,13 @@
-import { use, StackContext, ViteStaticSite } from "sst/constructs";
+import { use, NextjsSite, StackContext, ViteStaticSite } from "sst/constructs";
 import { Api } from "./Api";
 
 export function Web({ stack }: StackContext) {
   const api = use(Api);
 
-  const site = new ViteStaticSite(stack, "site", {
-    path: "web",
-    buildCommand: "npm run build",
+  const site = new NextjsSite(stack, "site", {
+    path: "next",
     environment: {
-      VITE_GRAPHQL_URL: api.url + "/graphql",
+      NEXT_PUBLIC_GRAPHQL_URL: api.url + "/graphql",
     },
   });
 
