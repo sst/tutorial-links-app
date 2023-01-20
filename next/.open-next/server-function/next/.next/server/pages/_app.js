@@ -4,7 +4,7 @@ exports.id = 888;
 exports.ids = [888];
 exports.modules = {
 
-/***/ 157:
+/***/ 5157:
 /***/ ((module) => {
 
 // Exports
@@ -16,7 +16,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 618:
+/***/ 7618:
 /***/ ((module) => {
 
 // Exports
@@ -28,7 +28,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 446:
+/***/ 8446:
 /***/ ((module) => {
 
 // Exports
@@ -40,7 +40,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 991:
+/***/ 8002:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -55,24 +55,24 @@ __webpack_require__.d(__webpack_exports__, {
 // EXTERNAL MODULE: external "react/jsx-runtime"
 var jsx_runtime_ = __webpack_require__(997);
 // EXTERNAL MODULE: ../node_modules/.pnpm/@next+font@13.1.1/node_modules/@next/font/google/target.css?{"path":"pages/_app.tsx","import":"Roboto_Slab","arguments":[{"subsets":["latin"],"weight":["400","700","900"]}],"variableName":"roboto"}
-var _app_tsx_import_Roboto_Slab_arguments_subsets_latin_weight_400_700_900_variableName_roboto_ = __webpack_require__(157);
+var _app_tsx_import_Roboto_Slab_arguments_subsets_latin_weight_400_700_900_variableName_roboto_ = __webpack_require__(5157);
 var _app_tsx_import_Roboto_Slab_arguments_subsets_latin_weight_400_700_900_variableName_roboto_default = /*#__PURE__*/__webpack_require__.n(_app_tsx_import_Roboto_Slab_arguments_subsets_latin_weight_400_700_900_variableName_roboto_);
 // EXTERNAL MODULE: ../node_modules/.pnpm/@next+font@13.1.1/node_modules/@next/font/google/target.css?{"path":"pages/_app.tsx","import":"Source_Sans_Pro","arguments":[{"subsets":["latin"],"weight":["300","400","600","700","900"]}],"variableName":"sans"}
-var _app_tsx_import_Source_Sans_Pro_arguments_subsets_latin_weight_300_400_600_700_900_variableName_sans_ = __webpack_require__(446);
+var _app_tsx_import_Source_Sans_Pro_arguments_subsets_latin_weight_300_400_600_700_900_variableName_sans_ = __webpack_require__(8446);
 var _app_tsx_import_Source_Sans_Pro_arguments_subsets_latin_weight_300_400_600_700_900_variableName_sans_default = /*#__PURE__*/__webpack_require__.n(_app_tsx_import_Source_Sans_Pro_arguments_subsets_latin_weight_300_400_600_700_900_variableName_sans_);
 // EXTERNAL MODULE: ../node_modules/.pnpm/@next+font@13.1.1/node_modules/@next/font/google/target.css?{"path":"pages/_app.tsx","import":"Source_Code_Pro","arguments":[{"subsets":["latin"],"weight":["400","700"]}],"variableName":"code"}
-var _app_tsx_import_Source_Code_Pro_arguments_subsets_latin_weight_400_700_variableName_code_ = __webpack_require__(618);
+var _app_tsx_import_Source_Code_Pro_arguments_subsets_latin_weight_400_700_variableName_code_ = __webpack_require__(7618);
 var _app_tsx_import_Source_Code_Pro_arguments_subsets_latin_weight_400_700_variableName_code_default = /*#__PURE__*/__webpack_require__.n(_app_tsx_import_Source_Code_Pro_arguments_subsets_latin_weight_400_700_variableName_code_);
 ;// CONCATENATED MODULE: external "styled-jsx/style"
 const style_namespaceObject = require("styled-jsx/style");
 var style_default = /*#__PURE__*/__webpack_require__.n(style_namespaceObject);
 // EXTERNAL MODULE: ./styles/globals.css
-var globals = __webpack_require__(211);
+var globals = __webpack_require__(2211);
 ;// CONCATENATED MODULE: external "next/head"
 const head_namespaceObject = require("next/head");
 var head_default = /*#__PURE__*/__webpack_require__.n(head_namespaceObject);
-;// CONCATENATED MODULE: external "urql"
-const external_urql_namespaceObject = require("urql");
+// EXTERNAL MODULE: external "urql"
+var external_urql_ = __webpack_require__(2977);
 ;// CONCATENATED MODULE: ./pages/_app.tsx
 
 
@@ -82,11 +82,11 @@ const external_urql_namespaceObject = require("urql");
 
 
 
-const urql = (0,external_urql_namespaceObject.createClient)({
-    url: "{{ NEXT_PUBLIC_GRAPHQL_URL }}" || 0
+const urql = (0,external_urql_.createClient)({
+    url: "{{ NEXT_PUBLIC_GRAPHQL_URL }}"
 });
 function App({ Component , pageProps  }) {
-    return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(external_urql_namespaceObject.Provider, {
+    return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(external_urql_.Provider, {
         value: urql,
         children: [
             /*#__PURE__*/ (0,jsx_runtime_.jsxs)((head_default()), {
@@ -221,7 +221,7 @@ function App({ Component , pageProps  }) {
 
 /***/ }),
 
-/***/ 211:
+/***/ 2211:
 /***/ (() => {
 
 
@@ -234,6 +234,14 @@ function App({ Component , pageProps  }) {
 "use strict";
 module.exports = require("react/jsx-runtime");
 
+/***/ }),
+
+/***/ 2977:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("urql");
+
 /***/ })
 
 };
@@ -243,7 +251,7 @@ module.exports = require("react/jsx-runtime");
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = (__webpack_exec__(991));
+var __webpack_exports__ = (__webpack_exec__(8002));
 module.exports = __webpack_exports__;
 
 })();

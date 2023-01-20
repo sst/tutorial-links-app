@@ -31,6 +31,6 @@
     "graphql": "16.5.0"
   },
   "dependencies": {
-    "sst": "2.0.0-rc.32"
+    "sst": "2.0.0-rc.40"
   }
 }

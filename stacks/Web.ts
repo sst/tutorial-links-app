@@ -1,4 +1,4 @@
-import { use, NextjsSite, StackContext, ViteStaticSite } from "sst/constructs";
+import { use, NextjsSite, StackContext } from "sst/constructs";
 import { Api } from "./Api";
 
 export function Web({ stack }: StackContext) {

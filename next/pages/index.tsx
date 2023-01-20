@@ -1,13 +1,12 @@
 import Link from "next/link";
 import { useMemo } from "react";
-//import { useTypedQuery } from "@my-sst-app/graphql/urql";
+import { useTypedQuery } from "@my-sst-app/graphql/urql";
 import Empty from "../components/Empty";
-//import Navbar from "../components/Navbar";
+import Navbar from "../components/Navbar";
 import Loading from "../components/Loading";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
-  /*
   // Handle empty document cache
   // https://formidable.com/open-source/urql/docs/basics/document-caching/#adding-typenames
   const context = useMemo(
@@ -59,6 +58,4 @@ export default function Home() {
       )}
     </div>
   );
-  */
-  return <div>hello</div>;
 }

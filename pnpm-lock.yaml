@@ -8,11 +8,11 @@ importers:
       aws-cdk-lib: 2.55.0
       constructs: 10.1.156
       hygen: ^6.2.11
-      sst: 2.0.0-rc.32
+      sst: 2.0.0-rc.40
       typescript: ^4.8.3
       vitest: ^0.23.2
     dependencies:
-      sst: 2.0.0-rc.32
+      sst: 2.0.0-rc.40
     devDependencies:
       '@tsconfig/node16': 1.0.3
       aws-cdk-lib: 2.55.0_constructs@10.1.156
@@ -26,15 +26,17 @@ importers:
       '@genql/cli': ^2.10.0
       '@genql/runtime': ^2.10.0
       '@types/react': 18.0.26
+      graphql: ^16.6.0
       react: 18.2.0
       urql: ^3.0.1
       wonka: ^6.1.2
     dependencies:
       '@genql/cli': 2.10.0
-      '@genql/runtime': 2.10.0
+      '@genql/runtime': 2.10.0_graphql@16.6.0
       '@types/react': 18.0.26
+      graphql: 16.6.0
       react: 18.2.0
-      urql: 3.0.3_react@18.2.0
+      urql: 3.0.3_onqnqwb3ubg5opvemcqf7c2qhy
       wonka: 6.1.2
 
   next:
@@ -381,6 +383,51 @@ packages:
 
   /@aws-sdk/client-cognito-identity/3.208.0:
     resolution: {integrity: sha512-mYlkNxRYJyXkHwY+6kv2Wth2xcP+dfgDrqfnHqMAKL1TGPVtkCKFYw0xAk4aBrlRfx1unyQFDen2NfBVtITCSw==}
+    engines: {node: '>=14.0.0'}
+    dependencies:
+      '@aws-crypto/sha256-browser': 2.0.0
+      '@aws-crypto/sha256-js': 2.0.0
+      '@aws-sdk/client-sts': 3.208.0
+      '@aws-sdk/config-resolver': 3.208.0
+      '@aws-sdk/credential-provider-node': 3.208.0
+      '@aws-sdk/fetch-http-handler': 3.208.0
+      '@aws-sdk/hash-node': 3.208.0
+      '@aws-sdk/invalid-dependency': 3.208.0
+      '@aws-sdk/middleware-content-length': 3.208.0
+      '@aws-sdk/middleware-endpoint': 3.208.0
+      '@aws-sdk/middleware-host-header': 3.208.0
+      '@aws-sdk/middleware-logger': 3.208.0
+      '@aws-sdk/middleware-recursion-detection': 3.208.0
+      '@aws-sdk/middleware-retry': 3.208.0
+      '@aws-sdk/middleware-serde': 3.208.0
+      '@aws-sdk/middleware-signing': 3.208.0
+      '@aws-sdk/middleware-stack': 3.208.0
+      '@aws-sdk/middleware-user-agent': 3.208.0
+      '@aws-sdk/node-config-provider': 3.208.0
+      '@aws-sdk/node-http-handler': 3.208.0
+      '@aws-sdk/protocol-http': 3.208.0
+      '@aws-sdk/smithy-client': 3.208.0
+      '@aws-sdk/types': 3.208.0
+      '@aws-sdk/url-parser': 3.208.0
+      '@aws-sdk/util-base64': 3.208.0
+      '@aws-sdk/util-base64-browser': 3.208.0
+      '@aws-sdk/util-base64-node': 3.208.0
+      '@aws-sdk/util-body-length-browser': 3.188.0
+      '@aws-sdk/util-body-length-node': 3.208.0
+      '@aws-sdk/util-defaults-mode-browser': 3.208.0
+      '@aws-sdk/util-defaults-mode-node': 3.208.0
+      '@aws-sdk/util-endpoints': 3.208.0
+      '@aws-sdk/util-user-agent-browser': 3.208.0
+      '@aws-sdk/util-user-agent-node': 3.208.0
+      '@aws-sdk/util-utf8-browser': 3.188.0
+      '@aws-sdk/util-utf8-node': 3.208.0
+      tslib: 2.4.1
+    transitivePeerDependencies:
+      - aws-crt
+    dev: false
+
+  /@aws-sdk/client-iot-data-plane/3.208.0:
+    resolution: {integrity: sha512-YGFPYUbY1vFoYHWXqQ7D77ldkaQ1Tx84daO/rnPtYgyQSDOfuvTp3DeSFj4+rMbwMJWWhYoK4fXaIc9zLoy1NA==}
     engines: {node: '>=14.0.0'}
     dependencies:
       '@aws-crypto/sha256-browser': 2.0.0
@@ -2603,27 +2650,6 @@ packages:
       - zenObservable
     dev: false
 
-  /@genql/runtime/2.10.0:
-    resolution: {integrity: sha512-hWy4fkHAk0OUW/cmjAOhbE3PnR9YfwaE8DRl5oEf7r9K6Owju8ogTDV3RMkG6Vm57H9xYxI5+am5ImAUbqPH8A==}
-    peerDependencies:
-      graphql: '*'
-    dependencies:
-      '@types/qs': 6.9.7
-      '@types/ws': 6.0.4
-      graphql-query-batcher: 1.0.1
-      isomorphic-unfetch: 3.1.0
-      lodash: 4.17.21
-      subscriptions-transport-ws: 0.9.19
-      tslib: 2.4.1
-      utility-types: 3.10.0
-      ws: 6.2.2
-      zen-observable-ts: 0.8.21
-    transitivePeerDependencies:
-      - bufferutil
-      - encoding
-      - utf-8-validate
-    dev: false
-
   /@genql/runtime/2.10.0_graphql@16.6.0:
     resolution: {integrity: sha512-hWy4fkHAk0OUW/cmjAOhbE3PnR9YfwaE8DRl5oEf7r9K6Owju8ogTDV3RMkG6Vm57H9xYxI5+am5ImAUbqPH8A==}
     peerDependencies:
@@ -3086,14 +3112,6 @@ packages:
 
   /@types/yoga-layout/1.9.2:
     resolution: {integrity: sha512-S9q47ByT2pPvD65IvrWp7qppVMpk9WGMbVq9wbWZOHg6tnXSD4vyhao6nOSBwwfDdV2p3Kx9evA9vI+XWTfDvw==}
-    dev: false
-
-  /@urql/core/3.1.1:
-    resolution: {integrity: sha512-Mnxtq4I4QeFJsgs7Iytw+HyhiGxISR6qtyk66c9tipozLZ6QVxrCiUPF2HY4BxNIabaxcp+rivadvm8NAnXj4Q==}
-    peerDependencies:
-      graphql: ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
-    dependencies:
-      wonka: 6.1.2
     dev: false
 
   /@urql/core/3.1.1_graphql@16.6.0:
@@ -5097,6 +5115,11 @@ packages:
       has-symbols: 1.0.3
     dev: false
 
+  /get-port/6.1.2:
+    resolution: {integrity: sha512-BrGGraKm2uPqurfGVj/z97/zv8dPleC6x9JBNRTrDNtCkkRF4rPwrQXFgL7+I+q8QSdU4ntLQX2D7KIxSy8nGw==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dev: false
+
   /get-stream/6.0.1:
     resolution: {integrity: sha512-ts6Wi+2j3jQjqi70w5AlN8DFnkSwC+MqmxEzdEALB2qXZYV3X/b1CTfgPLGJNMeAWxdPfU8FO1ms3NUfaHCPYg==}
     engines: {node: '>=10'}
@@ -7081,8 +7104,8 @@ packages:
     resolution: {integrity: sha512-D9cPgkvLlV3t3IzL0D0YLvGA9Ahk4PcvVwUbN0dSGr1aP0Nrt4AEnTUbuGvquEC0mA64Gqt1fzirlRs5ibXx8g==}
     dev: true
 
-  /sst/2.0.0-rc.32:
-    resolution: {integrity: sha512-lCSZS34DFi4AeKkwR58xagnhCkBdQPDBVI8dL57DbtnlsC/XoygTYnw4y4KDLhZFzovZP5IBAbuvRMqoV4xH9Q==}
+  /sst/2.0.0-rc.40:
+    resolution: {integrity: sha512-pueYFM2eIDbSwjCwdMt1LPUWmqfMr5HTXf4VBJANLxey/wISMh+OpFgjDDCdR5g14FRAP8bwEWrbjWATJEIJ6Q==}
     hasBin: true
     peerDependencies:
       '@sls-next/lambda-at-edge': ^3.7.0
@@ -7100,6 +7123,7 @@ packages:
       '@aws-cdk/region-info': 2.55.0
       '@aws-sdk/client-cloudformation': 3.208.0
       '@aws-sdk/client-iot': 3.208.0
+      '@aws-sdk/client-iot-data-plane': 3.208.0
       '@aws-sdk/client-lambda': 3.208.0
       '@aws-sdk/client-rds-data': 3.208.0
       '@aws-sdk/client-s3': 3.208.0_qw547zcg4ls6cmf6md55ex6k2m
@@ -7121,6 +7145,7 @@ packages:
       aws-sdk: 2.1252.0
       builtin-modules: 3.2.0
       cdk-assets: 2.55.0
+      chalk: 4.1.2
       chokidar: 3.5.3
       ci-info: 3.7.1
       colorette: 2.0.19
@@ -7132,6 +7157,7 @@ packages:
       esbuild: 0.16.13
       express: 4.18.2
       fast-jwt: 1.7.2
+      get-port: 6.1.2
       glob: 8.0.3
       graphql: 16.6.0
       graphql-helix: 1.13.0_graphql@16.6.0
@@ -7288,22 +7314,6 @@ packages:
     dependencies:
       client-only: 0.0.1
       react: 18.2.0
-    dev: false
-
-  /subscriptions-transport-ws/0.9.19:
-    resolution: {integrity: sha512-dxdemxFFB0ppCLg10FTtRqH/31FNRL1y1BQv8209MK5I4CwALb7iihQg+7p65lFcIl8MHatINWBLOqpgU4Kyyw==}
-    deprecated: The `subscriptions-transport-ws` package is no longer maintained. We recommend you use `graphql-ws` instead. For help migrating Apollo software to `graphql-ws`, see https://www.apollographql.com/docs/apollo-server/data/subscriptions/#switching-from-subscriptions-transport-ws    For general help using `graphql-ws`, see https://github.com/enisdenjo/graphql-ws/blob/master/README.md
-    peerDependencies:
-      graphql: '>=0.10.0'
-    dependencies:
-      backo2: 1.0.2
-      eventemitter3: 3.1.2
-      iterall: 1.3.0
-      symbol-observable: 1.2.0
-      ws: 7.5.9
-    transitivePeerDependencies:
-      - bufferutil
-      - utf-8-validate
     dev: false
 
   /subscriptions-transport-ws/0.9.19_graphql@16.6.0:
@@ -7604,17 +7614,6 @@ packages:
     dependencies:
       '@urql/core': 3.1.1_graphql@16.6.0
       graphql: 16.6.0
-      react: 18.2.0
-      wonka: 6.1.2
-    dev: false
-
-  /urql/3.0.3_react@18.2.0:
-    resolution: {integrity: sha512-aVUAMRLdc5AOk239DxgXt6ZxTl/fEmjr7oyU5OGo8uvpqu42FkeJErzd2qBzhAQ3DyusoZIbqbBLPlnKo/yy2A==}
-    peerDependencies:
-      graphql: ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
-      react: '>= 16.8.0'
-    dependencies:
-      '@urql/core': 3.1.1
       react: 18.2.0
       wonka: 6.1.2
     dev: false

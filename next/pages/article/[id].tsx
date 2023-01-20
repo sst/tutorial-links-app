@@ -1,9 +1,9 @@
 import { useMemo } from "react";
 import { useRouter } from "next/router";
-//import { useTypedQuery, useTypedMutation } from "@my-sst-app/graphql/urql";
+import { useTypedQuery, useTypedMutation } from "@my-sst-app/graphql/urql";
 import Button from "../../components/Button";
 import Empty from "../../components/Empty";
-//import Navbar from "../../components/Navbar";
+import Navbar from "../../components/Navbar";
 import Loading from "../../components/Loading";
 import styles from "../../styles/Article.module.css";
 
@@ -13,10 +13,8 @@ interface CommentForm {
 }
 
 export default function Article() {
-  /*
   const router = useRouter();
-  const { ids = [] } = router.query;
-  const id = ids[0];
+  const id = router.query.id as string;
 
   // Handle empty document cache
   // https://formidable.com/open-source/urql/docs/basics/document-caching/#adding-typenames
@@ -104,6 +102,4 @@ export default function Article() {
       )}
     </div>
   );
-  */
-  return <div>Article</div>;
 }
