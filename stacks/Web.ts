@@ -5,7 +5,7 @@ export function Web({ stack }: StackContext) {
   const api = use(Api);
 
   const site = new NextjsSite(stack, "site", {
-    path: "next",
+    path: "web",
     environment: {
       NEXT_PUBLIC_GRAPHQL_URL: api.url + "/graphql",
     },

@@ -24,7 +24,6 @@
   "workspaces": [
     "services",
     "graphql",
-    "next",
     "web"
   ],
   "overrides": {
