@@ -1,10 +1,10 @@
+import Link from "next/link";
 import { useMemo } from "react";
-import { Link } from "react-router-dom";
 import { useTypedQuery } from "@my-sst-app/graphql/urql";
 import Empty from "../components/Empty";
 import Navbar from "../components/Navbar";
 import Loading from "../components/Loading";
-import * as styles from "./Home.css";
+import styles from "../styles/Home.module.css";
 
 export default function Home() {
   // Handle empty document cache
@@ -38,7 +38,7 @@ export default function Home() {
             <li key={article.id} className={styles.article}>
               <div>
                 <h2 className={styles.title}>
-                  <Link to={`/article/${article.id}`}>{article.title}</Link>
+                  <Link href={`/article/${article.id}`}>{article.title}</Link>
                 </h2>
                 &nbsp;
                 <a target="_blank" href={article.url} className={styles.url}>
@@ -48,7 +48,7 @@ export default function Home() {
               <div className={styles.footer}>
                 <strong>{article.comments.length}</strong>
                 <span className={styles.footerSeparator}>&bull;</span>
-                <Link to={`/article/${article.id}`}>View Comments</Link>
+                <Link href={`/article/${article.id}`}>View Comments</Link>
               </div>
             </li>
           ))}

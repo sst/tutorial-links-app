@@ -1,8 +1,4 @@
-import {
-  use,
-  StackContext,
-  Api as ApiGateway,
-} from "@serverless-stack/resources";
+import { use, StackContext, Api as ApiGateway } from "sst/constructs";
 import { Database } from "./Database";
 
 export function Api({ stack }: StackContext) {
@@ -16,15 +12,17 @@ export function Api({ stack }: StackContext) {
     },
     routes: {
       "POST /graphql": {
-        type: "pothos",
+        type: "graphql",
         function: {
-          handler: "functions/graphql/graphql.handler",
+          handler: "services/functions/graphql/graphql.handler",
         },
-        schema: "services/functions/graphql/schema.ts",
-        output: "graphql/schema.graphql",
-        commands: [
-          "npx genql --output ./graphql/genql --schema ./graphql/schema.graphql --esm",
-        ],
+        pothos: {
+          schema: "services/functions/graphql/schema.ts",
+          output: "graphql/schema.graphql",
+          commands: [
+            "cd graphql && pnpm genql --output ./genql --schema ./schema.graphql --esm",
+          ],
+        },
       },
     },
   });

@@ -1,7 +1,9 @@
-import { Link, useNavigate } from "react-router-dom";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { CgLink } from "react-icons/cg";
 import { useTypedMutation } from "@my-sst-app/graphql/urql";
 import Button from "./Button";
-import * as styles from "./Navbar.css";
+import styles from "./Navbar.module.css";
 
 interface ArticleForm {
   url: string;
@@ -9,7 +11,7 @@ interface ArticleForm {
 }
 
 export default function Navbar() {
-  const navigate = useNavigate();
+  const router = useRouter();
   const [result, createArticle] = useTypedMutation((opts: ArticleForm) => ({
     createArticle: [
       opts,
@@ -21,11 +23,12 @@ export default function Navbar() {
 
   return (
     <div className={styles.navbar}>
-      <div className={styles.header}>
-        <Link to="/" className={styles.title}>
-          <span className={styles.logo}>&#128279;</span> Links
-        </Link>
-      </div>
+      <Link href="/" className={styles.title}>
+        <span className={styles.logo}>
+          <CgLink className={styles.logoIcon} />
+        </span>
+        <span className={styles.titleCopy}>Links</span>
+      </Link>
       <form
         className={styles.form}
         onSubmit={async (e) => {
@@ -41,7 +44,7 @@ export default function Navbar() {
               url,
               title,
             });
-            navigate(`/article/${result.data?.createArticle.id}`);
+            router.push(`/article/${result.data?.createArticle.id}`);
           }
         }}
       >
